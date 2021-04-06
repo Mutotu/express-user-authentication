@@ -18,7 +18,7 @@ You will build a backend to power our knock-off version of Craigslist. (No front
 1. A user can create a new post inside an existing category(`POST /categories/:id/posts`)
 1. A user can see a list of all posts inside an existing category (`GET /categories/:id/posts`)
 1. A user can see a list of existing tags(`GET /tags`)
-1. A user can associate an existing category with an existing tag (`PUT /categories/:categoryId/tags/:tagId`)
+1. A user can associate an existing post with an existing tag (`PUT /tags/:tagId/tags/:tagId`)
 1. A user can see a list of all posts that are associated with a tag (`GET /tags/:id/posts`)
 1. A user can see a list of all tags that are associated with a post (`GET /posts/:id/tags`)
 
