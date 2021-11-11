@@ -1,0 +1,25 @@
+{
+  "name": "express-craigslist",
+  "version": "1.0.0",
+  "description": "Craigslist is a site that lets users create posts belonging to a category. It also lets users tag existing posts with one or more pre-defined tags (for example, Best-Of, Offensive, etc.)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.generalassemb.ly:mutotu/express-craigslist.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "rowdy-logger": "^1.0.2",
+    "sequelize": "^6.9.0"
+  }
+}
