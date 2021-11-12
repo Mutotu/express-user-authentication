@@ -17,6 +17,9 @@ postRoutes.get("/:id", postControllers.getOneCategory);
 
 postRoutes.get("/post/:id/tag", postControllers.getTaggedPosts);
 
-//get posts with category and tags
-postRoutes.get("/tags/:id/posts", postControllers.getAllTaggedPosts);
+// get posts with category and tags
+postRoutes.get("/tag/posts", postControllers.getAllTaggedPosts);
+
+postRoutes.put("/tags/:tagId/posts/:postId", postControllers.associateTagPost);
+
 module.exports = postRoutes;

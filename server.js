@@ -15,6 +15,12 @@ app.listen(PORT, () => {
   routesReport.print();
 });
 
+app.get("/", (req, res) => {
+  res.render("home.ejs");
+});
+
 app.use("/category", categoryRoutes);
 app.use("/tags", tagRoutes);
 app.use("/categories", postRoutes);
+
+app.set("view engine", "ejs");

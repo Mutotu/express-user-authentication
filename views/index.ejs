@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>
+      <a href="/categories/<%= category.title%>"><%= category.title%></a>
+    </h3>
+    <%category["posts"].forEach(p=>{%>
+    <h4><%= p.title%></h4>
+    <h4><%= p.description%></h4>
+    <%})%> <%- include("./partials/footer") %>
+  </body>
+</html>

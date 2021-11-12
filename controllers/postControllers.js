@@ -49,9 +49,9 @@ postControllers.getAllPosts = async (req, res) => {
       },
       include: models.post,
     });
-
-    res.send(category);
-  } catch (er) {
+    // res.send(category);
+    res.render("index.ejs", { category });
+  } catch (err) {
     res.send(err.message);
   }
 };
@@ -68,7 +68,7 @@ postControllers.getOneCategory = async (req, res) => {
     res.send(err);
   }
 };
-
+//working
 postControllers.getTaggedPosts = async (req, res) => {
   try {
     const post = await models.post.findOne({
@@ -78,11 +78,35 @@ postControllers.getTaggedPosts = async (req, res) => {
       include: models.tag,
     });
     console.log(post);
-    res.send(post);
+    // res.send(post);
+    res.render("show.ejs", { post });
   } catch (err) {
     res.send(err.message);
   }
 };
 
-postControllers.getAllTaggedPosts = async (req, res) => {};
+postControllers.getAllTaggedPosts = async (req, res) => {
+  console.log("alll");
+  try {
+  } catch (err) {
+    res.send(err.message);
+  }
+};
+
+//check again
+//A user can associate an existing post with an existing tag (PUT /tags/:tagId/posts/:postId)
+postControllers.associateTagPost = async (req, res) => {
+  try {
+    const post = await models.post.findOne({
+      where: { id: req.params.id },
+    });
+    const tag = await models.tag.findOne({
+      where: { postId: post.id },
+    });
+    tag.update(req.params.postId);
+    res.send(post);
+  } catch (err) {
+    res.send(err.message);
+  }
+};
 module.exports = postControllers;
