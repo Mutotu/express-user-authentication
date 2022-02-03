@@ -1,0 +1,20 @@
+postsTag model
+
+sequelize model:generate --name=postsTag --attributes postId:integer,tagId:integer
+
+
+==>check on the magic methods..
+
+
+in tag Model =>  models.tag.belongsToMany(models.post, { through: "postsTag" }); // postsTag is table name
+
+
+post.js ==>  models.tag.belongsToMany(models.tag, { through: "postsTag" });
+
+==========
+==to access the magic method use Object.keys(models.user)
+or == console.log(Object.keys(models.tag.__proto__));
+
+>from https://stackoverflow.com/questions/52738883/how-to-get-access-to-accessor-methods-in-sequelize
+===========
+

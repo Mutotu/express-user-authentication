@@ -85,15 +85,6 @@ postControllers.getTaggedPosts = async (req, res) => {
   }
 };
 
-postControllers.getAllTaggedPosts = async (req, res) => {
-  console.log("alll");
-  try {
-  } catch (err) {
-    res.send(err.message);
-  }
-};
-
-//check again
 //A user can associate an existing post with an existing tag (PUT /tags/:tagId/posts/:postId)
 postControllers.associateTagPost = async (req, res) => {
   try {
